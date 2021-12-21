@@ -1,7 +1,7 @@
 {
 
   "scripts": {
-      "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
+    "g": "git add . && git commit -m \"first commit\" && git push -u origin main -f",
     "build": "tsc -p api/tsconfig.json && tsc -p web/tsconfig.json"
   },
   "dependencies": {
