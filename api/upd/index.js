@@ -1,11 +1,15 @@
-import { IncomingMessage, ServerResponse } from 'http';
-import { parseRequest } from './_lib/parser';
+//import { IncomingMessage, ServerResponse } from 'http';
+//import { parseRequest } from './_lib/parser';
 
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
+export default async function handler(req, res) {
     try {
       //  const parsedReq = parseRequest(req);
+      req = req.body
         console.log(req)
+          res.status(200).json({
+    body: req
+  })
         // const html = getHtml(parsedReq);
         // if (isHtmlDebug) {
         //     res.setHeader('Content-Type', 'text/html');
@@ -14,10 +18,10 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
         // }
         // const { fileType } = parsedReq;
       //  const file = await getScreenshot(html, fileType, isDev);
-        res.statusCode = 200;
-     //   res.setHeader('Content-Type', `application/json;charset=UTF-8`);
-      //  res.setHeader('Cache-Control', `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`);
-        res.end('parsedReq');
+     //    res.statusCode = 200;
+     // res.setHeader('Content-Type', `application/json`);
+     //  //  res.setHeader('Cache-Control', `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`);
+     //    res.end('parsedReq');
     } catch (e) {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/html');
