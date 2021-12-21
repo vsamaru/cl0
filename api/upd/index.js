@@ -1,14 +1,14 @@
 //import { IncomingMessage, ServerResponse } from 'http';
-//import { parseRequest } from './_lib/parser';
+import { parseRequest } from './_lib/parser';
 
 
 export default async function handler(req, res) {
     try {
-      //  const parsedReq = parseRequest(req);
-      req = req.body
-        console.log(req)
+      const parsedReq = parseRequest(req);
+     // req = req.body
+        console.log(parsedReq)
           res.status(200).json({
-    body: req
+    body: parsedReq
   })
         // const html = getHtml(parsedReq);
         // if (isHtmlDebug) {
