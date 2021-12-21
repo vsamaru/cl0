@@ -5,6 +5,7 @@ import { parseRequest } from './_lib/parser';
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
     try {
         const parsedReq = parseRequest(req);
+        console.log(parsedReq)
         // const html = getHtml(parsedReq);
         // if (isHtmlDebug) {
         //     res.setHeader('Content-Type', 'text/html');
